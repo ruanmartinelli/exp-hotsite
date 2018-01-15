@@ -2,7 +2,9 @@
   "name": "exp-hotsite",
   "scripts": {
     "start": "LOGGY_STACKS=true brunch watch --server -n",
-    "build": "brunch build --production"
+    "build": "brunch build --production",
+    "lint": "./node_modules/.bin/eslint app/**",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
