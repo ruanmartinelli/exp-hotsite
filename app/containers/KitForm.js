@@ -16,6 +16,7 @@ class KitForm extends Component {
 
   componentDidMount() {
     this.props.fetchKitGenders();
+    this.props.fetchKitShoeSizes();
   }
 
   handleSelection(property, value) {
@@ -31,10 +32,7 @@ class KitForm extends Component {
     }
 
     const genders = kit.genders.filter(g => g.available);
-    const shoeSizes = [
-      { id: 1, name: '44' },
-      { id: 2, name: '41' },
-    ];
+    const shoeSizes = kit.shoeSizes.filter(g => g.available);
 
     return (
       <div>
@@ -62,11 +60,13 @@ class KitForm extends Component {
     );
   }
 }
+
 KitForm.propTypes = {
   kit: PropTypes.shape({
     genders: PropTypes.arrayOf(PropTypes.object)
   }).isRequired,
-  fetchKitGenders: PropTypes.func.isRequired
+  fetchKitGenders: PropTypes.func.isRequired,
+  fetchKitShoeSizes: PropTypes.func.isRequired,
 };
 
 export default connect(({ kit }) => ({ kit }), {
