@@ -12,7 +12,8 @@ module.exports = {
   },
   plugins: {
     babel: {
-      presets: ['latest', 'react']
+      presets: ['latest', 'react'],
+      plugins: ['transform-object-rest-spread']
     },
     autoReload: {
       port: 9485
