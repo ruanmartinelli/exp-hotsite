@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../actions';
 
-class Kit extends Component {
+class KitForm extends Component {
   componentDidMount() {
     this.props.fetchKitGenders();
   }
@@ -26,7 +26,7 @@ class Kit extends Component {
   }
 }
 
-Kit.propTypes = {
+KitForm.propTypes = {
   kit: PropTypes.shape({
     genders: PropTypes.arrayOf(PropTypes.object)
   }).isRequired,
@@ -37,4 +37,4 @@ export default connect(
   ({ kit }) => ({ kit }),
   {
     ...actions
-  })(Kit);
+  })(KitForm);
