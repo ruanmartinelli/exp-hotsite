@@ -2,7 +2,10 @@ import {
   INCREMENT,
   DECREMENT,
   FETCH_KIT_GENDERS,
-  FETCH_KIT_SHOESIZES
+  FETCH_KIT_SHOESIZES,
+  FETCH_KIT_SHIRTSIZES,
+  FETCH_KIT_TOPSIZES,
+  FETCH_KIT_SHORTSIZES
 } from './actionTypes';
 
 export const decrement = () => ({
@@ -41,7 +44,46 @@ export const fetchKitShoeSizes = () => ({
       { id: 11, name: '44', available: true },
       { id: 12, name: '45', available: true },
       { id: 13, name: '46', available: true },
-      { id: 14, name: '47', available: true },
+      { id: 14, name: '47', available: true }
+    ]
+  }
+});
+
+export const fetchKitShirtSizes = () => ({
+  type: FETCH_KIT_SHIRTSIZES,
+  payload: {
+    shirtSizes: [
+      { id: 1, name: 'PP', available: true },
+      { id: 2, name: 'P', available: true },
+      { id: 3, name: 'M', available: true },
+      { id: 4, name: 'G', available: false },
+      { id: 5, name: 'GG', available: true }
+    ]
+  }
+});
+
+export const fetchKitTopSizes = () => ({
+  type: FETCH_KIT_TOPSIZES,
+  payload: {
+    topSizes: [
+      { id: 1, name: 'PP', available: true },
+      { id: 2, name: 'P', available: true },
+      { id: 3, name: 'M', available: true },
+      { id: 4, name: 'G', available: true },
+      { id: 5, name: 'GG', available: true }
+    ]
+  }
+});
+
+export const fetchKitShortSizes = () => ({
+  type: FETCH_KIT_SHORTSIZES,
+  payload: {
+    shortSizes: [
+      { id: 1, name: 'PP', available: true },
+      { id: 2, name: 'P', available: true },
+      { id: 3, name: 'M', available: true },
+      { id: 4, name: 'G', available: true },
+      { id: 5, name: 'GG', available: true }
     ]
   }
 });

@@ -17,6 +17,9 @@ class KitForm extends Component {
   componentDidMount() {
     this.props.fetchKitGenders();
     this.props.fetchKitShoeSizes();
+    this.props.fetchKitShirtSizes();
+    this.props.fetchKitTopSizes();
+    this.props.fetchKitShortSizes();
   }
 
   handleSelection(property, value) {
@@ -27,18 +30,27 @@ class KitForm extends Component {
 
   render() {
     const { kit } = this.props;
+
     if (!kit.genders) {
       return false;
     }
 
-    const genders = kit.genders.filter(g => g.available);
-    const shoeSizes = kit.shoeSizes.filter(g => g.available);
+    const genders = kit.genders.filter(item => item.available);
+    const shoeSizes = kit.shoeSizes.filter(item => item.available);
+    const shirtSizes = kit.shirtSizes.filter(item => item.available);
+    const topSizes = kit.topSizes.filter(item => item.available);
+    const shortSizes = kit.shortSizes.filter(item => item.available);
 
     return (
       <div>
         <div className="row">
           <div className="col-md-6">
-            <form onSubmit={(event) => { event.preventDefault(); console.log(this.state); }}>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                console.log(this.state);
+              }}
+            >
               <RadioGroup
                 label="Que tipo de kit prefere receber?"
                 options={genders}
@@ -52,6 +64,30 @@ class KitForm extends Component {
                 selected={this.state.shoeSize}
                 onSelect={value => this.handleSelection('shoeSize', value)}
               />
+
+              <RadioGroup
+                label="Qual o seu tamanho de camiseta?"
+                options={shirtSizes}
+                selected={this.state.shirtSize}
+                onSelect={value => this.handleSelection('shirtSize', value)}
+              />
+
+              <RadioGroup
+                label="Qual o seu tamanho de top?"
+                options={topSizes}
+                selected={this.state.topSize}
+                onSelect={value => this.handleSelection('topSize', value)}
+              />
+
+              <RadioGroup
+                label="Qual o seu tamanho de shorts?"
+                options={shortSizes}
+                selected={this.state.shortSize}
+                onSelect={value => this.handleSelection('shortSize', value)}
+              />
+
+              <h1>q</h1>
+
               <button type="submit">Submit</button>
             </form>
           </div>
@@ -67,6 +103,9 @@ KitForm.propTypes = {
   }).isRequired,
   fetchKitGenders: PropTypes.func.isRequired,
   fetchKitShoeSizes: PropTypes.func.isRequired,
+  fetchKitShirtSizes: PropTypes.func.isRequired,
+  fetchKitTopSizes: PropTypes.func.isRequired,
+  fetchKitShortSizes: PropTypes.func.isRequired
 };
 
 export default connect(({ kit }) => ({ kit }), {
