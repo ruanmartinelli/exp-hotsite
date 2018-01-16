@@ -12,9 +12,9 @@ export const fetchKitGenders = () => ({
   type: FETCH_KIT_GENDERS,
   payload: {
     genders: [
-        { name: 'Masculino' },
-        { name: 'Feminino' },
-        { name: 'Zoidberg' }
+        { id: 1, available: true, name: 'Masculino' },
+        { id: 2, available: true, name: 'Feminino' },
+        { id: 3, available: false, name: 'Zoidberg' }
     ]
   }
 });
