@@ -1,8 +1,11 @@
 $color-green: #65a80d;
 $color-white: #fff;
+$color-gray: #8d8d8d;
+
+$radio-btn-size: 4.5em;
 
 .checkout-tabs {
-  border-bottom: .1em solid #ddd;
+  border-bottom: 0.1em solid #ddd;
   margin: 0 0 2em 0;
 
   .active-tab {
@@ -25,5 +28,45 @@ $color-white: #fff;
       background-color: $color-green;
       color: $color-white;
     }
+  }
+}
+
+.radio-group {
+  input[type='radio'] {
+    display: none;
+  }
+  .radio-group-label {
+    font-weight: 900;
+    font-size: 1.4em;
+    padding: 1em 0 1em 0;
+  }
+
+  .radio-group-button {
+    border: 1px solid $color-gray;
+    color: $color-gray;
+    cursor: pointer;
+    margin: 0 0.3em .3em 0;
+
+  }
+  
+  .circle{
+    border-radius: 50%;
+    width: $radio-btn-size;
+    line-height: $radio-btn-size;
+    text-align: center;
+    height: $radio-btn-size;
+  }
+  
+  .pill{
+    line-height: $radio-btn-size;
+    height: $radio-btn-size;
+    text-align: center;
+    padding: 0 5em;
+    border-radius: 4em;
+  }
+
+  .radio-checked {
+    background-color: $color-green !important;
+    color: $color-white !important;
   }
 }

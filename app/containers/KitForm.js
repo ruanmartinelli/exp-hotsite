@@ -56,6 +56,7 @@ class KitForm extends Component {
                 options={genders}
                 selected={this.state.gender}
                 onSelect={value => this.handleSelection('gender', value)}
+                optionsStyle="pill"
               />
 
               <RadioGroup

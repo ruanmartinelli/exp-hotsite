@@ -1,17 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RadioGroup = ({ label, options, selected, onSelect }) => (
-  <div>
-    {label}
+const compare = (n, m) => parseInt(n, 10) === parseInt(m, 10);
+
+const RadioGroup = ({ label, options, selected, onSelect, optionsStyle }) => (
+  <div className="radio-group">
+    <div className="radio-group-label">{label}</div>
     <div onChange={event => onSelect(event.target.value)}>
       {options.map(option => (
-        <label htmlFor={option.name} key={option.id}>
+        <label
+          className={`
+            radio-group-button 
+            ${optionsStyle} 
+            ${compare(selected, option.id) ? 'radio-checked' : ''}
+          `}
+          htmlFor={option.name}
+          key={option.id}
+        >
           <input
             type="radio"
             name={option.name}
+            id={option.name}
             value={option.id}
-            checked={selected === (`${option.id}`)}
+            checked={compare(selected, option.id)}
           />
           {option.name}
         </label>
@@ -21,13 +32,15 @@ const RadioGroup = ({ label, options, selected, onSelect }) => (
 );
 
 RadioGroup.defaultProps = {
-  selected: null
+  selected: null,
+  optionsStyle: 'circle'
 };
 
 RadioGroup.propTypes = {
   label: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.string,
+  optionsStyle: PropTypes.oneOf(['pill', 'circle']),
   options: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
