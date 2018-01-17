@@ -1,13 +1,87 @@
-// #app {
-//   flex: 1;
-//   align-self: center;
-//   justify-content: center;
-//   align-content: center;
+@import "utilities";
 
-//   .counter {
-//     .count {
-//       padding-top: 120px;
-//       margin-bottom: 60px;
-//     }
-//   }
-// }
+$color-green: #65a80d;
+$color-white: #fff;
+$color-gray: #8d8d8d;
+
+$radio-btn-size: 4.8em;
+
+.checkout-tabs {
+  border-bottom: 0.1em solid #ddd;
+  margin: 0 0 2em 0;
+
+  .active-tab {
+    background-color: $color-green !important;
+    color: $color-white !important;
+  }
+
+  .checkout-tab {
+    min-height: 5em;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $color-green;
+    background-color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-green;
+      color: $color-white;
+    }
+  }
+}
+
+.radio-group {
+  input[type='radio'] {
+    display: none;
+  }
+  .radio-group-label {
+    font-weight: 900;
+    font-size: 1.4em;
+    padding: 1em 0 1em 0;
+  }
+}
+
+.buttn {
+  font-weight: 900;
+  cursor: pointer;
+  margin: 0 1em 1em 0;
+  line-height: $radio-btn-size;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.buttn-primary {
+  border: 1px solid $color-gray !important;
+  color: $color-gray !important;
+  background-color: $color-white !important;
+}
+
+.buttn-secondary {
+  background-color: $color-green !important;
+  color: $color-white !important;
+}
+
+.circle {
+  border-radius: 50%;
+  width: $radio-btn-size;
+  height: $radio-btn-size;
+  padding: 0 !important;
+}
+
+.pill {
+  height: $radio-btn-size;
+  padding: 0 5em !important;
+  border-radius: 4em;
+}
+
+.bg-dark{
+  background-color: #000;
+  color: $color-white;
+}
+
+.txt-green{
+  color: $color-green !important;
+}

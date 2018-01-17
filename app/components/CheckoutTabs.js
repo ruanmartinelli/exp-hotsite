@@ -2,20 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const tabs = [
-  { id: 1, label: '1', uri: 'step1' },
-  { id: 2, label: '2', uri: 'step2' },
-  { id: 3, label: '3', uri: 'step3' },
-  { id: 4, label: '4', uri: 'step4' }
+  { id: 1, label: '1', uri: 'step1', active: false },
+  { id: 2, label: '2', uri: 'step2', active: false },
+  { id: 3, label: '3', uri: 'step3', active: true },
+  { id: 4, label: '4', uri: 'step4', active: false }
 ];
 
 const CheckoutTabs = () => (
-  <div className="row">
+  <div className="row checkout-tabs">
     {tabs.map(tab => (
-      <div className={`col-md-${12 / tabs.length} text-center`} key={tab.id}>
-        <Link to={tab.uri}>
+      <Link to={tab.uri} key={tab.id}>
+        <div
+          className={`col-md-3 ${tab.active ? 'active-tab' : ''} checkout-tab`}
+        >
           {tab.label}
-        </Link>
-      </div>
+        </div>
+      </Link>
     ))}
   </div>
 );
