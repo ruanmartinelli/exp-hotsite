@@ -10,7 +10,10 @@ class KitForm extends Component {
 
     this.state = {
       gender: null,
-      shoeSize: null
+      shoeSize: null,
+      shirtSize: null,
+      topSize: null,
+      shortSize: null
     };
   }
 
@@ -23,7 +26,7 @@ class KitForm extends Component {
   }
 
   handleSelection(property, value) {
-    const data = {};
+    const data = this.state;
     data[property] = value;
     this.setState(data, () => console.log(this.state));
   }
