@@ -1,20 +1,10 @@
 import {
-  INCREMENT,
-  DECREMENT,
   FETCH_KIT_GENDERS,
   FETCH_KIT_SHOESIZES,
   FETCH_KIT_SHIRTSIZES,
   FETCH_KIT_TOPSIZES,
   FETCH_KIT_SHORTSIZES
 } from './actionTypes';
-
-export const decrement = () => ({
-  type: DECREMENT
-});
-
-export const increment = () => ({
-  type: INCREMENT
-});
 
 export const fetchKitGenders = () => ({
   type: FETCH_KIT_GENDERS,

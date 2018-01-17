@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import reducers from './reducers';
 import Root from './Root';
-// import * as SDKInitializer from './libs/SDKInitializer';
+import * as SDKInitializer from './libs/SDKInitializer';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -16,4 +16,4 @@ const App = () =>
 
 ReactDOM.render(<App />, document.querySelector('#app'));
 
-// SDKInitializer.initSDKs();
+SDKInitializer.initSDKs();
