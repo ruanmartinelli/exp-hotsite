@@ -65,6 +65,10 @@ class KitForm extends Component {
     const topSizes = kit.topSizes.filter(item => item.available);
     const shortSizes = kit.shortSizes.filter(item => item.available);
 
+    const isFemale = kit.genders.find(
+      item => item.id.toString() === this.state.gender && item.type === 'FEMALE'
+    );
+
     return (
       <div>
         <form
@@ -97,12 +101,14 @@ class KitForm extends Component {
                 onSelect={value => this.handleSelection('shirtSize', value)}
               />
 
-              <RadioGroup
-                label="Qual o seu tamanho de top?"
-                options={topSizes}
-                selected={this.state.topSize}
-                onSelect={value => this.handleSelection('topSize', value)}
-              />
+              {isFemale ? (
+                <RadioGroup
+                  label="Qual o seu tamanho de top?"
+                  options={topSizes}
+                  selected={this.state.topSize}
+                  onSelect={value => this.handleSelection('topSize', value)}
+                />
+              ) : (() => { this.state.topSize = null; })()}
 
               <RadioGroup
                 label="Qual o seu tamanho de shorts?"
