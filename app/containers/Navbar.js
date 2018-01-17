@@ -1,15 +1,20 @@
 import React from 'react';
 
-const Navbar = () =>
-  <nav className="navbar">
-    <div className="row">
+const Navbar = () => (
+  <nav className="mb-5">
+    <div className="row px-4 m-0">
       <div className="col-md-6">
-        <h3>_EXP</h3>
+        <h3>
+          <strong>_EXP</strong>
+        </h3>
       </div>
       <div className="col-md-6 text-right">
-        <h3>Karol com 5K_</h3>
+        <h3>
+          <strong>Karol com 5K_</strong>
+        </h3>
       </div>
     </div>
-  </nav>;
+  </nav>
+);
 
 export default Navbar;
