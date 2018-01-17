@@ -71,7 +71,7 @@ class KitForm extends Component {
     );
 
     return (
-      <div>
+      <div className="mb-5">
         <form
           onSubmit={(event) => {
             event.preventDefault();

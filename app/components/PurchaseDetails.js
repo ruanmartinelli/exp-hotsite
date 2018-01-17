@@ -19,7 +19,7 @@ const PurchaseDetails = () => (
       <strong> Detalhes da Compra </strong>{' '}
     </h2>
     <h1 className="txt-green">
-      <strong> R$ 666,00 em até 5x </strong>
+      <strong> R$ 660,00 <small className="txt-green">em até 5x</small></strong>
     </h1>
     <h4 className="mt-3">
       <strong> Você terá direito a: </strong>
