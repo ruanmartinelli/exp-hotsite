@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Navbar from './containers/Navbar';
-import Footer from './containers/Footer';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import KitForm from './containers/KitForm';
 import CheckoutTabs from './components/CheckoutTabs';
 
