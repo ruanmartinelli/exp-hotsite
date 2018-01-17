@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../actions';
 import RadioGroup from '../components/RadioGroup';
+import PurchaseDetails from '../components/PurchaseDetails';
 
 class KitForm extends Component {
   constructor(props) {
@@ -78,7 +79,7 @@ class KitForm extends Component {
           }}
         >
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-7">
               <RadioGroup
                 label="Que tipo de kit prefere receber?"
                 options={genders}
@@ -116,6 +117,9 @@ class KitForm extends Component {
                 selected={this.state.shortSize}
                 onSelect={value => this.handleSelection('shortSize', value)}
               />
+            </div>
+            <div className="col-md-5">
+              <PurchaseDetails />
             </div>
           </div>
           <div className="row mt-5">
