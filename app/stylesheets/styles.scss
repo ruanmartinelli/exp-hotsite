@@ -1,13 +1,29 @@
-// #app {
-//   flex: 1;
-//   align-self: center;
-//   justify-content: center;
-//   align-content: center;
+$color-green: #65a80d;
+$color-white: #fff;
 
-//   .counter {
-//     .count {
-//       padding-top: 120px;
-//       margin-bottom: 60px;
-//     }
-//   }
-// }
+.checkout-tabs {
+  border-bottom: .1em solid #ddd;
+  margin: 0 0 2em 0;
+
+  .active-tab {
+    background-color: $color-green !important;
+    color: $color-white !important;
+  }
+
+  .checkout-tab {
+    min-height: 5em;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $color-green;
+    background-color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-green;
+      color: $color-white;
+    }
+  }
+}
