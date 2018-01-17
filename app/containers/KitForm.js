@@ -31,10 +31,31 @@ class KitForm extends Component {
     this.setState(data, () => console.log(this.state));
   }
 
+  showFormResult() {
+    const message = `
+      genderId: ${this.state.gender}
+      shoeSizeId: ${this.state.shoeSize}
+      shirtSizeId: ${this.state.shirtSize}
+      topSizeId: ${this.state.topSize}
+      shortSizeId: ${this.state.shortSize}
+    `;
+    alert(message);
+  }
+
   render() {
     const { kit } = this.props;
 
-    if (!kit.genders) {
+    const keys = [
+      'genders',
+      'shoeSizes',
+      'shirtSizes',
+      'topSizes',
+      'shortSizes'
+    ];
+
+    const allDataLoaded = keys.every(key => kit[key]);
+
+    if (!allDataLoaded) {
       return false;
     }
 
@@ -49,7 +70,7 @@ class KitForm extends Component {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            console.log(this.state);
+            this.showFormResult();
           }}
         >
           <div className="row">
@@ -93,8 +114,8 @@ class KitForm extends Component {
           </div>
           <div className="row mt-5">
             <div className="col-md-12">
-              <button className="buttn buttn-primary pill" type="submit">
-              ◄ Voltar
+              <button className="buttn buttn-primary pill" type="button">
+                ◄ Voltar
               </button>
               <button
                 className="buttn buttn-secondary pill pull-right"
