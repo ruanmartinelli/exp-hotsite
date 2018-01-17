@@ -1,3 +1,5 @@
+@import "utilities";
+
 $color-green: #65a80d;
 $color-white: #fff;
 $color-gray: #8d8d8d;
@@ -40,33 +42,37 @@ $radio-btn-size: 4.5em;
     font-size: 1.4em;
     padding: 1em 0 1em 0;
   }
+}
 
-  .radio-group-button {
-    border: 1px solid $color-gray;
-    color: $color-gray;
-    cursor: pointer;
-    margin: 0 0.3em .3em 0;
+.buttn {
+  font-weight: 900;
+  cursor: pointer;
+  margin: 0 0.3em 0.3em 0;
+  line-height: $radio-btn-size;
+  text-align: center;
+  border: 1px solid transparent;
+}
 
-  }
-  
-  .circle{
-    border-radius: 50%;
-    width: $radio-btn-size;
-    line-height: $radio-btn-size;
-    text-align: center;
-    height: $radio-btn-size;
-  }
-  
-  .pill{
-    line-height: $radio-btn-size;
-    height: $radio-btn-size;
-    text-align: center;
-    padding: 0 5em;
-    border-radius: 4em;
-  }
+.buttn-primary {
+  border: 1px solid $color-gray !important;
+  color: $color-gray !important;
+  background-color: $color-white !important;
+}
 
-  .radio-checked {
-    background-color: $color-green !important;
-    color: $color-white !important;
-  }
+.buttn-secondary {
+  background-color: $color-green !important;
+  color: $color-white !important;
+}
+
+.circle {
+  border-radius: 50%;
+  width: $radio-btn-size;
+  height: $radio-btn-size;
+  padding: 0 !important;
+}
+
+.pill {
+  height: $radio-btn-size;
+  padding: 0 5em !important;
+  border-radius: 4em;
 }

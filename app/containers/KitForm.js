@@ -43,14 +43,14 @@ class KitForm extends Component {
 
     return (
       <div>
-        <div className="row">
-          <div className="col-md-6">
-            <form
-              onSubmit={(event) => {
-                event.preventDefault();
-                console.log(this.state);
-              }}
-            >
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            console.log(this.state);
+          }}
+        >
+          <div className="row">
+            <div className="col-md-6">
               <RadioGroup
                 label="Que tipo de kit prefere receber?"
                 options={genders}
@@ -86,13 +86,22 @@ class KitForm extends Component {
                 selected={this.state.shortSize}
                 onSelect={value => this.handleSelection('shortSize', value)}
               />
-
-              <h1>q</h1>
-
-              <button type="submit">Submit</button>
-            </form>
+            </div>
           </div>
-        </div>
+          <div className="row mt-5">
+            <div className="col-md-12">
+              <button className="buttn buttn-primary pill" type="submit">
+              ◄ Voltar
+              </button>
+              <button
+                className="buttn buttn-secondary pill pull-right"
+                type="submit"
+              >
+                Avançar
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     );
   }

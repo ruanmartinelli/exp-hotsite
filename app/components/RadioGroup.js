@@ -10,9 +10,9 @@ const RadioGroup = ({ label, options, selected, onSelect, optionsStyle }) => (
       {options.map(option => (
         <label
           className={`
-            radio-group-button 
+            buttn
             ${optionsStyle} 
-            ${compare(selected, option.id) ? 'radio-checked' : ''}
+            ${compare(selected, option.id) ? 'buttn-secondary' : 'buttn-primary'}
           `}
           htmlFor={option.name}
           key={option.id}
