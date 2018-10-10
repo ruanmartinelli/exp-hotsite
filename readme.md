@@ -1,5 +1,7 @@
 ## :runner: exp-hotsite
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ruanmartinelli/exp-hotsite.svg)](https://greenkeeper.io/)
+
 > A simple React/Redux application for a static hotsite.
 
 ### Description
